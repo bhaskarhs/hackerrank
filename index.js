@@ -75,20 +75,85 @@
 
 // birthdayCandleCake([3, 4, 5, 3, 3, 5]);
 
-function timeConversion(string) {
-  // let string = ;
-  let [hours, minutes, timeStamp] = string.split(":");
+// function timeConversion(string) {
+//   let [hours, minutes, timeStamp] = string.split(":");
+//   if (timeStamp.slice(-2) === "PM" && parseInt(hours) < 12) {
+//     hours = String(parseInt(hours) + 12).padStart(2, "0");
+//   } else if (timeStamp.slice(-2) === "PM" && parseInt(hours) === 12) {
+//     hours = "12";
+//   } else if (parseInt(hours) === 12) {
+//     hours = "00";
+//   }
+//   return `${hours}:${minutes}:${timeStamp.slice(0, 2)}`;
+// }
 
-  if (timeStamp.slice(-2) === "PM" && parseInt(hours) < 12) {
-    hours = String(parseInt(hours) + 12).padStart(2, "0");
-  } else if (timeStamp.slice(-2) === "PM" && parseInt(hours) === 12) {
-    hours = "12";
-  } else if (parseInt(hours) === 12) {
-    hours = "00";
-  }
-  return `${hours}:${minutes}:${timeStamp.slice(0, 2)}`;
+// let result = timeConversion("12:05:45PM");
+
+// console.log(result);
+
+//to find the gradeEnglish
+//write a function to round the values to its nearest 5 multiple
+//as per the condition round them up
+// loop the array and pass each values to the function the result will be pushed to the new array
+
+// function grades(n) {
+//   let number = 5 - (parseInt(n) % 5);
+//   let roundedNumber = 0;
+
+//   if (n > 0 && number <= 2) {
+//     roundedNumber = n + number;
+//   } else {
+//     roundedNumber = n;
+//   }
+//   return roundedNumber >= 40 ? roundedNumber : n;
+// }
+
+// function gradesEnglish(grade) {
+//   let roundedresultsArray = [];
+//   for (let i = 0; i < grade.length; i++) {
+//     roundedresultsArray.push(grades(grade[i]));
+//   }
+
+//   return roundedresultsArray;
+// }
+
+// console.log(gradesEnglish([73, 67, 38, 33]));
+
+//Apple and Orange
+// function looparray(array, start) {
+//   const result = array.map((item) => item + start);
+//   return result;
+// }
+
+// function countApplesAndOranges(s, t, a, b, apples, oranges) {
+//   // Write your code here
+//   const apple = looparray(apples, a);
+//   const orange = looparray(oranges, b);
+//   let applecount = 0;
+//   let orangecount = 0;
+//   for (let i = 0; i < apple.length; i++) {
+//     if (s <= apple[i] && t >= apple[i]) {
+//       applecount += 1;
+//     }
+//   }
+
+//   for (let i = 0; i < orange.length; i++) {
+//     if (s <= orange[i] && t >= orange[i]) {
+//       orangecount += 1;
+//     }
+//   }
+//   console.log(applecount, orangecount);
+// }
+
+// countApplesAndOranges(7, 10, 4, 12, [2, 3, -4], [3, -2, -4]);
+
+
+//kangaros jump counts
+//start at x1 with speed of v1 second kangaros start at x2 and with speed of v2
+//return yes if both kangaors exit
+
+function kangaors(x1,v1,x2,v1) {
+    if (v1 > v2) {
+        
+    }
 }
-
-let result = timeConversion("12:05:45PM");
-
-console.log(result);
