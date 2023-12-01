@@ -1,0 +1,113 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        window.onload = function () {
+            function page_type(pageType) {
+                let data_path = document.querySelector('body').getAttribute('data-path')
+                if (pageType == 'PLP') {
+                    if (data_path == '/skincare/') {
+                        page_type('CLP')
+                    }
+                }
+                if (pageType == 'pages') {
+                    if (data_path === '/our-story/' || data_path === '/our-philosophy/' || data_path ===
+                    '/our-sustainability/' || data_path === '/our-philanthropy/' || data_path === '/thinkbeautifully/')
+                    {
+                    page_type('Our Brand');
+                    }
+                    if (data_path == ('/our-science-technology/' || 'green-tech/' || '/our-laboratory/' ||
+                            '/our-active-ingredients/' || '/our-expertise/')) {
+                        page_type('Our Science')
+                    }
+                    if (data_path == '/press/') {
+                        page_type('Press')
+                    }
+                } 
+                else {
+                    page_type(data_path.toString())
+                }
+
+                window._uxa = window._uxa || [];
+                window._uxa.push(['setCustomVariable', 1, "page_type", pageType, 3]);
+            }
+            let pagetype = document.querySelector('body').getAttribute('template');
+            switch (pagetype) {
+                case 'pages/home':
+                    page_type("homepage");
+                    break;
+                case 'pages/product':
+                    page_type("PDP");
+                    break;
+                case 'pages/category':
+                    page_type("PLP");
+                    break;
+                case 'pages/cart':
+                    page_type("Cart")
+                    break;
+                case 'pages/checkout':
+                    page_type("shipping")
+                    break;
+                case 'pages/page':
+                    page_type("pages")
+                    break;
+                case 'pages/search':
+                    page_type('search');
+                    break;
+                case 'pages/account/returns':
+                    page_type('account')
+                    break;
+                case 'pages/account/orders':
+                    page_type('account')
+                    break;
+                case 'pages/account/inbox':
+                    page_type('account')
+                    break;
+                case 'pages/account/addresses':
+                    page_type('account')
+                    break;
+                case 'pages/account/payment-methods':
+                    page_type('payments')
+                    break;
+                case 'pages/account/wishlists':
+                    page_type('wishlists')
+                    break;
+                case 'pages/account/recent-items':
+                    page_type('account')
+                    break;
+                case 'pages/account/edit':
+                    page_type('account')
+                    break;
+                default:
+                    page_type(pagetype.toString())
+                    break;
+            }
+
+            contentSquareLocale();
+            contentSquareLoggedIn();
+        }
+
+
+
+        function contentSquareLocale() {
+            let locale = document.querySelector('body').getAttribute('data-secure-url').split('/')[3]
+            window._uxa = window._uxa || [];
+            window._uxa.push(['setCustomVariable', 2, " locale", locale, 3]);
+
+        }
+
+        function contentSquareLoggedIn() {
+            window._uxa = window._uxa || [];
+            window._uxa.push(['setCustomVariable', 3, "loggedIn", 'Guest', 3]);
+        }
+    </script>
+</body>
+
+</html>
