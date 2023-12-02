@@ -14,5 +14,7 @@
 5.  ### Heap Sort
 
 
-### Approach to solve the bubble sort
-1.  
+### Approach to solve the bubble sort.
+
+1.  In bubble sort technique the adjacent element is compared and are sorted as per the condition
+2.  the time complacity of the bubble sort is o(n^2) and space complacity is 0(1)
